@@ -1,0 +1,443 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  color: #333;
+  background-color: #faf7f4;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  /* background-image: url('assets/portada-boda.jpg'); /* Pon tu imagen */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.hero-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+}
+
+.hero-names {
+  font-size: 2.8rem;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.hero-date {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero-audio {
+  margin-bottom: 2rem;
+}
+
+.hero-audio audio {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Countdown */
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  min-width: 70px;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.count-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.count-label {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* SECCIONES GENERALES */
+
+.section {
+  padding: 3.5rem 1.5rem;
+}
+
+.section:nth-of-type(even) {
+  background-color: #fff;
+}
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.75rem;
+  font-weight: 600;
+  color: #3b3023;
+}
+
+.section-description {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  color: #5a4a3b;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #d0b8a8;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #93735a;
+  margin-bottom: 0.75rem;
+}
+
+/* Verso */
+
+.verse-section {
+  background-color: #f5ece4;
+}
+
+.verse-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.verse-ref {
+  font-size: 0.9rem;
+  color: #8b6c55;
+}
+
+/* Padres / Padrinos */
+
+.parents-section {
+  background-color: #fff;
+}
+
+.parents-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.parents-block {
+  padding: 1.5rem 1.25rem;
+  border-radius: 1rem;
+  background-color: #faf4ee;
+}
+
+.mini-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8b6c55;
+  margin-bottom: 0.75rem;
+}
+
+.person-name {
+  margin: 0.15rem 0;
+  font-weight: 500;
+}
+
+.godparents {
+  margin-top: 2rem;
+}
+
+.godparents .person-name {
+  font-weight: 600;
+}
+
+/* Recepción */
+
+.reception-section {
+  background-color: #fdf7f1;
+}
+
+.reception-info {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.reception-time {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #3b3023;
+}
+
+.reception-place {
+  color: #5a4a3b;
+  margin-bottom: 1.5rem;
+}
+
+/* Itinerario */
+
+.itinerary-section {
+  background-color: #fff;
+}
+
+.timeline {
+  margin: 1.5rem auto 2rem;
+  max-width: 520px;
+  border-left: 2px solid #e0c9b8;
+  padding-left: 1.25rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.23rem;
+  top: 0.2rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  background-color: #c49a7f;
+  border: 2px solid #fdf7f1;
+}
+
+.time {
+  font-weight: 600;
+  color: #3b3023;
+  margin-bottom: 0.1rem;
+}
+
+.detail {
+  color: #5a4a3b;
+}
+
+.children-note {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #5a4a3b;
+  padding: 1.25rem 1rem;
+  border-radius: 1rem;
+  background-color: #faf4ee;
+}
+
+/* Dress code */
+
+.dresscode-section {
+  background-color: #f5ece4;
+}
+
+.dresscode-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.dresscode-subtext {
+  color: #5a4a3b;
+}
+
+/* Fotos / QR */
+
+.photos-section {
+  background-color: #fff;
+}
+
+/* RSVP */
+
+.rsvp-section {
+  background-color: #fdf7f1;
+}
+
+.rsvp-form {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #3b3023;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d7c2b3;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: #fff;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #c49a7f;
+  box-shadow: 0 0 0 2px rgba(196, 154, 127, 0.15);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #4a3d31;
+}
+
+.radio-option input[type='radio'] {
+  accent-color: #c49a7f;
+}
+
+/* Botones */
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.primary-btn {
+  background-color: #c49a7f;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(196, 154, 127, 0.35);
+}
+
+.primary-btn:hover {
+  background-color: #b48767;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(196, 154, 127, 0.45);
+}
+
+.secondary-btn {
+  background-color: #fff;
+  color: #8b6c55;
+  border: 1px solid #d0b8a8;
+}
+
+.secondary-btn:hover {
+  background-color: #f5ece4;
+}
+
+.submit-btn {
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-size: 0.85rem;
+  color: #8b6c55;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 640px) {
+  .hero-names {
+    font-size: 3.4rem;
+  }
+
+  .hero {
+    padding-inline: 3rem;
+  }
+
+  .parents-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    min-height: 90vh;
+  }
+
+  .section {
+    padding-inline: 3rem;
+  }
+}
