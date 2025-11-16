@@ -146,7 +146,7 @@ body {
   padding: 0.2rem 0.75rem;
   border-radius: 999px;
   border: 1px solid #d0b8a8;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #93735a;
@@ -498,6 +498,11 @@ background: rgba(147, 147, 147, 0.60);
 
 .ng-invalid.ng-touched { border-color: red; }
 
+.separator{
+  min-height: 20px;
+  max-height: 40px;
+  width: 100vw;
+}
 
 
 @font-face {
