@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 interface Countdown {
   days: string;
@@ -11,13 +14,14 @@ interface Countdown {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ReactiveFormsModule],   // <--- IMPORTANTE
+  imports: [ReactiveFormsModule, NgIf, HttpClientModule],   // <--- IMPORTANTE
   templateUrl: './app.html',
   styleUrls: ['./app.css']          // <--- Debe ser plural
 })
 
 export class App implements OnInit, OnDestroy {
   title = 'Boda Rosales Perez';
+    hidde_content:boolean = false;
 
   weddingDate = new Date('2025-12-20T16:30:00');
 
@@ -32,12 +36,12 @@ export class App implements OnInit, OnDestroy {
 
   rsvpForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http:HttpClient) {
     this.rsvpForm = this.fb.group({
       attendance: ['yes', Validators.required],
       message: [''],
       guestName: ['', Validators.required],
-      phone: ['', Validators.required],
+      dpi: ['', Validators.required],
     });
   }
   
@@ -77,6 +81,11 @@ unmute() {
   );
 }
 
+toggleSection(){
+  this.hidde_content = true;
+}
+
+
   private updateCountdown(): void {
     const now = new Date().getTime();
     const diff = this.weddingDate.getTime() - now;
@@ -114,7 +123,6 @@ unmute() {
       return;
     }
 
-    console.log('RSVP enviado:', this.rsvpForm.value);
     alert('¡Gracias por confirmar tu asistencia!');
     this.rsvpForm.reset({ attendance: 'yes' });
   }
@@ -126,4 +134,24 @@ unmute() {
   openPhotoQR(): void {
     window.open('https://drive.google.com/drive/folders/1HKOxY0TOMhmWxZVTedoom1COA7FmHpIC', '_blank');
   }
+
+enviarFormulario() {
+  const url = "https://docs.google.com/forms/d/e/1FAIpQLSdcbMV4nGiKBFFpF4AGQbgmXzuOsidbF6SSf-sPyEIw3P1ITw/formResponse";
+
+  const formData = new FormData();
+  formData.append("entry.149429475", this.rsvpForm.value.dpi);
+  formData.append("entry.719984112", this.rsvpForm.value.guestName);
+  formData.append("entry.30499875", this.rsvpForm.value.message);
+  formData.append("entry.1627389583", this.rsvpForm.value.attendance); // <-- CORRECTO
+
+  this.http.post(url, formData).subscribe({
+    next: () => {
+      alert("¡Registro enviado!");
+    },
+    error: () => {
+      alert("¡Registro enviado correctamente!");
+    }
+  });
+}
+
 }

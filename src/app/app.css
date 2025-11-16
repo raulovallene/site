@@ -462,6 +462,44 @@ background: rgba(147, 147, 147, 0.60);
     font-family: 'DM Serif Text', serif;
 }
 
+.show-more-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  /* Base color you requested */
+  background: rgba(152, 170, 174, 0.45); /* #98aaae + transparency */
+
+  /* Gloss / glass effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* Border using same color but softer */
+  border: 1px solid rgba(152, 170, 174, 0.4);
+
+  /* Text color matching your palette */
+  color: #3b3023;
+
+  /* Soft elegant shadow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.25s ease;
+}
+
+.show-more-btn:hover {
+  background: rgba(152, 170, 174, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.ng-invalid.ng-touched { border-color: red; }
+
+
+
 @font-face {
     font-family: 'SalomeWide';
     src: url('/assets/fonts/salome/SalomeWide.woff2') format('woff2'),

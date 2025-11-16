@@ -15,7 +15,7 @@
   id="ytplayer"
   width="1"
   height="1"
-  src="https://www.youtube.com/embed/nS-rnG_DGHA?enablejsapi=1&autoplay=1&mute=1&controls=0&loop=1&playlist=nS-rnG_DGHA&amp;start=117"
+  src="https://www.youtube.com/embed/6JqnbsQpljU?enablejsapi=1&autoplay=1&mute=1&controls=0&loop=1&playlist=6JqnbsQpljU&start=5"
   frameborder="0"
   style="opacity:0; position:absolute;"
   allow="autoplay">
@@ -44,19 +44,22 @@
     </div>
   </header>
 
+<button class="toggle-btn show-more-btn" (click)="toggleSection()" *ngIf="!hidde_content">
+  Next Section <span class="arrow">Click here to see the invitation</span>
+</button>
+
   <!-- FRASE / VERSÍCULO -->
-  <section class="section verse-section">
+  <section class="section verse-section" *ngIf="hidde_content">
     <div class="section-inner">
       <p class="verse-text">
-        “Texto bíblico o frase especial aquí, que represente nuestro amor y
-        nuestra fe.”
+        “Si te quiero es porque sos mi amor, mi cómplice y todo. Y en la calle, codo a codo, somos mucho más que dos”
       </p>
-      <p class="verse-ref">Salmos 42:8 (ejemplo)</p>
+      <p class="verse-ref">- Mario Benedetti</p>
     </div>
   </section>
 
   <!-- PADRES y PADRINOS -->
-  <section class="parents-section">
+  <section class="parents-section" *ngIf="hidde_content">
     <div class="section-inner">
       <p class="tag">Con la bendición de Dios</p>
       <h2 class="section-title">Y nuestros padres</h2>
@@ -64,33 +67,34 @@
       <div class="parents-grid">
         <div class="parents-block">
           <h3 class="mini-title">Novio</h3>
-          <p class="person-name">Enma Elizabeth Soto Matias</p>
-          <p class="person-name">Otto Rene Santiago Velasquez</p>
+          <p class="person-name">Rosa Margarita Loarca Sotoj</p>
+          <p class="person-name">César Augusto Rosales De León<span style="color:#6c6c6c; font-size:1.4rem;">✝</span>
+</p>
         </div>
         <div class="parents-block">
           <h3 class="mini-title">Novia</h3>
-          <p class="person-name">Pedro García García</p>
-          <p class="person-name">Evelyne de León</p>
+          <p class="person-name">Irasema Del Rosario Castillo Estrada De Pérez</p>
+          <p class="person-name">Angel Estuardo Pérez Corado</p>
         </div>
       </div>
 
       <div class="godparents">
         <h3 class="mini-title">Nuestros padrinos</h3>
-        <p class="person-name">Mayra Garcia y Fernando Morales</p>
+        <p class="person-name">Angel Pérez E Irasema De Pérez</p>
       </div>
     </div>
   </section>
 
   <!-- RECEPCIÓN -->
-  <section class="section reception-section">
+  <section class="section reception-section" *ngIf="hidde_content">
     <div class="section-inner">
       <h2 class="section-title">Recepción</h2>
 
       <div class="reception-info">
         <p class="reception-time">17:00 horas</p>
         <p class="reception-place">
-          Hotel Fuente Real, km 256.5 Carretera Interamericana, salida a
-          Tojocaz, Huehuetenango
+          Jardin Y Casa Para Eventos Casa Del Perro Carretera
+          A El Salvador
         </p>
         <button type="button" class="primary-btn" (click)="openMap()">
           Ver mapa
@@ -125,12 +129,11 @@
   </section> -->
 
   <!-- FOTOS / QR -->
-  <section class="section photos-section">
+  <section class="section photos-section" *ngIf="hidde_content">
     <div class="section-inner">
       <h2 class="section-title">Compártenos fotos y videos</h2>
       <p class="section-description">
-        Para compartir nuestros mejores momentos, escanea el código QR o haz
-        clic en el siguiente botón.
+        Para compartir nuestros mejores momentos.
       </p>
       <button type="button" class="secondary-btn" (click)="openPhotoQR()">
         Abrir álbum / escáner
@@ -139,7 +142,7 @@
   </section>
 
   <!-- RSVP / CONFIRMACIÓN -->
-  <section class="section rsvp-section">
+  <section class="section rsvp-section" *ngIf="hidde_content">
     <div class="section-inner">
       <h2 class="section-title">Confirma tu asistencia</h2>
       <p class="section-description">
@@ -174,13 +177,13 @@
         </div>
 
         <div class="form-group">
-          <label for="phone" class="form-label">Teléfono *</label>
+          <label for="dpi" class="form-label">DPI *</label>
           <input
-            id="phone"
-            type="tel"
+            id="dpi"
+            type="number"
             class="form-control"
-            formControlName="phone"
-            placeholder="Número de contacto"
+            formControlName="dpi"
+            placeholder="DPI"
           />
         </div>
 
@@ -195,14 +198,14 @@
           ></textarea>
         </div>
 
-        <button type="submit" class="primary-btn submit-btn">
+        <button type="submit" class="primary-btn submit-btn" (click)="enviarFormulario()">
           Enviar
         </button>
       </form>
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer"  *ngIf="hidde_content">
     <p>Con amor, Maycol &amp; Pamela</p>
   </footer>
 </div>
