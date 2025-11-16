@@ -157,6 +157,35 @@
     </div>
   </section>
 
+  <!-- Gift Section -->
+   <section class="gift-section" *ngIf="hidde_content">
+  <div class="gift-container">
+    <h2 class="section-title">Regalos</h2>
+
+    <p class="verse-text">
+      Sé parte de nuestro sueño ayudándonos a cumplirlo
+    </p>
+
+    <div class="gift-card">
+      <p class="gift-line">
+        <strong>Nombre:</strong> Pablo Rosales Loarca
+      </p>
+
+      <p class="gift-line">
+        <strong>Banco:</strong> BAC
+      </p>
+
+      <p class="gift-line">
+        <strong>Tipo de cuenta:</strong> Ahorro
+      </p>
+
+      <p class="gift-line">
+        <strong>Número de cuenta:</strong> 966315582
+      </p>
+    </div>
+  </div>
+</section>
+
   <!-- RSVP / CONFIRMACIÓN -->
   <section class="section rsvp-section" *ngIf="hidde_content">
     <div class="section-inner">
@@ -214,7 +243,7 @@
           ></textarea>
         </div>
 
-        <button type="submit" class="primary-btn submit-btn" (click)="enviarFormulario()">
+        <button type="submit" class="primary-btn submit-btn" (click)="enviarFormulario()" [disabled]="rsvpForm.invalid">
           Enviar
         </button>
       </form>

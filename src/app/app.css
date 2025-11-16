@@ -153,6 +153,56 @@ body {
   margin-bottom: 0.75rem;
 }
 
+/* Gift Section */
+.gift-section {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  background-image: url('https://i.pinimg.com/1200x/e9/05/14/e90514c84d49f7d9c330864b80f53981.jpg'); /* Pon tu imagen */
+  background-size:cover;
+  background-position: center;}
+
+.gift-container {
+  max-width: 600px;
+  text-align: center;
+}
+
+.gift-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  color: #b88a69; /* gold-rose */
+}
+
+.gift-verse {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #7d6452;
+  margin-bottom: 2.5rem;
+}
+
+.gift-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  border: 1px solid rgba(184, 138, 105, 0.3);
+}
+
+.gift-card-title {
+  font-size: 1.4rem;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 1.2rem;
+  color: #b88a69;
+}
+
+.gift-line {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+  color: #4a3e34;
+}
+
 /* Verso */
 .verse-section {
   position: relative;
