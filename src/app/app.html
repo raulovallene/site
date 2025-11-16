@@ -88,15 +88,28 @@
   <!-- RECEPCIÓN -->
   <section class="section reception-section" *ngIf="hidde_content">
     <div class="section-inner">
-      <h2 class="section-title">Recepción</h2>
+      <h2 class="section-title">Ceremonia Religiosa</h2>
+
+      <div class="reception-info">
+        <p class="reception-time">16:00 horas</p>
+        <p class="reception-place">
+          Parroquia Nuestro Señor de Esquipulas Aldea Don Justo Santa Catarina Pinula
+        </p>
+        <button type="button" class="primary-btn" (click)="openMap('church')">
+          Ver mapa
+        </button>
+      </div>
+    </div>
+
+        <div class="section-inner">
+      <h2 class="section-title">Recapción</h2>
 
       <div class="reception-info">
         <p class="reception-time">17:00 horas</p>
         <p class="reception-place">
-          Jardin Y Casa Para Eventos Casa Del Perro Carretera
-          A El Salvador
+          La dirección es km 18.5 Carretera a el Salvador Lote#9 el Canchon Santa Catarina Pinula
         </p>
-        <button type="button" class="primary-btn" (click)="openMap()">
+        <button type="button" class="primary-btn" (click)="openMap('party')">
           Ver mapa
         </button>
       </div>
@@ -206,6 +219,6 @@
   </section>
 
   <footer class="footer"  *ngIf="hidde_content">
-    <p>Con amor, Maycol &amp; Pamela</p>
+    <p>Con amor, Pablo &amp; Paula</p>
   </footer>
 </div>

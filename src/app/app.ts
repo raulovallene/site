@@ -127,8 +127,12 @@ toggleSection(){
     this.rsvpForm.reset({ attendance: 'yes' });
   }
 
-  openMap(): void {
-    window.open('https://ul.waze.com/ul?ll=14.53405018%2C-90.47651052&navigate=yes&zoom=17&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location', '_blank');
+  openMap(tp:string): void {
+    if(tp == 'church'){
+      window.open('https://ul.waze.com/ul?ll=14.54346963%2C-90.45466661&navigate=yes&zoom=17&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location','_blank');
+    }else if (tp == 'party'){
+      window.open('https://ul.waze.com/ul?ll=14.53405018%2C-90.47651052&navigate=yes&zoom=17&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location', '_blank');
+    }
   }
 
   openPhotoQR(): void {
