@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 interface Countdown {
@@ -15,6 +15,7 @@ interface Countdown {
   templateUrl: './app.html',
   styleUrls: ['./app.css']          // <--- Debe ser plural
 })
+
 export class App implements OnInit, OnDestroy {
   title = 'Boda Rosales Perez';
 
@@ -39,6 +40,7 @@ export class App implements OnInit, OnDestroy {
       phone: ['', Validators.required],
     });
   }
+  
 
   ngOnInit(): void {
     this.updateCountdown();
@@ -48,6 +50,32 @@ export class App implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }
+
+  @HostListener('document:click')
+unmute() {
+  const iframe: any = document.getElementById("ytplayer");
+  if (!iframe) return;
+
+  // Unmute without reloading iframe
+  iframe.contentWindow.postMessage(
+    JSON.stringify({
+      event: "command",
+      func: "unMute",
+      args: []
+    }),
+    "*"
+  );
+
+  // Ensure it keeps playing
+  iframe.contentWindow.postMessage(
+    JSON.stringify({
+      event: "command",
+      func: "playVideo",
+      args: []
+    }),
+    "*"
+  );
+}
 
   private updateCountdown(): void {
     const now = new Date().getTime();
