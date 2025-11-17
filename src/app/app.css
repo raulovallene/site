@@ -234,7 +234,13 @@ background: rgba(147, 147, 147, 0.60);
   font-family: 'Corinthia', cursive;
 }
 
+.verse-text-black{
+    font-family: 'Corinthia', cursive;
+}
 
+.verse-ref{
+  color: white;
+}
 
 /* Padres / Padrinos */
 
@@ -580,6 +586,10 @@ background: rgba(147, 147, 147, 0.60);
     font-size: 35px;
   }
 
+  .verse-ref{
+    font-size:15px; 
+  }
+
   .static-black {
     font-size: 25px;
   }
@@ -629,5 +639,9 @@ background: rgba(147, 147, 147, 0.60);
 
   .verse-text{
     font-size: 75px;
+  }
+
+  .verse-ref{
+    font-size: 30px;
   }
 }
