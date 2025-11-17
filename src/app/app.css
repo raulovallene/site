@@ -611,6 +611,10 @@ background: rgba(147, 147, 147, 0.60);
     overflow-x: auto; /* safe */
     padding-bottom: 0.5rem; /* evita corte inferior */
   }
+
+  .verse-text-black{
+    font-size: 30px;
+  }
 }
 
 /* LG: 900px */
@@ -642,6 +646,10 @@ background: rgba(147, 147, 147, 0.60);
   }
 
   .verse-ref{
-    font-size: 30px;
+    font-size: 60px;
+  }
+
+  .verse-text-black{
+    font-size: 50px;
   }
 }
