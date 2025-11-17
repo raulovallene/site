@@ -39,6 +39,12 @@ body {
   color: #fff;
 }
 
+.dresscode-section{
+  background-image: url('https://i.pinimg.com/1200x/e9/05/14/e90514c84d49f7d9c330864b80f53981.jpg'); /* Pon tu imagen */
+  background-size:cover;
+  background-position: center;
+}
+
 .hero .overlay {
   position: absolute;
   inset: 0;
